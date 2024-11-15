@@ -1,0 +1,12 @@
+kaggle
+jupyter
+pandas
+snowflake-connector-python
+ipykernel
+pyspark
+numpy
+matplotlib
+python-dotenv
+pyarrow
+fastparquet
+dbt-snowflake

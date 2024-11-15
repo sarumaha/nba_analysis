@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: nba_games
+    database: nba_games
+    schema: raw
+    tables:
+      - name: players
+        description: "Raw player data from NBA games"
+      - name: teams
+        description: "Raw team data from NBA games"
