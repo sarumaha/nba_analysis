@@ -21,7 +21,10 @@ WITH season_stats AS (
         SUM(BLK) AS total_blocks,
         SUM(turnover) AS total_turnovers,
         SUM(PF) AS total_personal_fouls,
-        COUNT(DISTINCT GAME_ID) AS games_played
+        COUNT(DISTINCT DETAILS_GAME_ID) AS games_played,
+        -- Calculate missed shots
+        SUM(FGA - FGM) AS missed_field_goals,
+        SUM(FTA - FTM) AS missed_free_throws
     FROM NBA_GAMES.DEV.int_player_stats
     GROUP BY PLAYER_ID, PLAYER_NAME, SEASON
 )
@@ -46,5 +49,14 @@ SELECT
     total_blocks,
     total_turnovers,
     total_personal_fouls,
-    games_played
+    games_played,
+    missed_field_goals,
+    missed_free_throws,
+    -- Calculate Efficiency (EFF)
+    CASE
+        WHEN games_played > 0 THEN
+            (total_points + total_rebounds + total_assists + total_steals + total_blocks 
+             - (missed_field_goals + missed_free_throws + total_turnovers)) / games_played
+        ELSE NULL
+    END AS efficiency_rating
 FROM season_stats
