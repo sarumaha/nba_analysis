@@ -1,6 +1,7 @@
 {{ config(materialized='table') }}
 
 SELECT
+    -- Player performance data
     s.PLAYER_ID,
     s.PLAYER_NAME,
     s.SEASON,
@@ -36,5 +37,14 @@ SELECT
     -- True Shooting Percentage
     CASE WHEN (2 * (s.total_field_goals_attempted + 0.44 * s.total_free_throws_attempted)) > 0 THEN
         s.total_points / (2 * (s.total_field_goals_attempted + 0.44 * s.total_free_throws_attempted))
-    END AS true_shooting_pct
+    END AS true_shooting_pct,
+    -- Additional information from the seed
+    p.PLAYER_POSITION,
+    p.HEIGHT_CM as HEIGHT,
+    p.WEIGHT,
+    p.BIRTH_DATE,
+    p.AGE,
+    p.SCHOOL
 FROM {{ ref('int_season_stats') }} s
+LEFT JOIN {{ ref('stg_player_information') }} p
+    ON s.PLAYER_NAME = p.PLAYER_NAME
