@@ -1,0 +1,1 @@
+{{test_efficiency_rating(ref('int_season_stats'))}}

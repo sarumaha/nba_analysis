@@ -1,16 +1,16 @@
 WITH player_information AS (
     SELECT 
-        "TeamID" AS TEAM_ID,
+        TEAM_ID,
         SEASON,
-        "LeagueID" AS LEAGUE_ID,
-        PLAYER AS player_name,
-        POSITION AS PLAYER_POSITION,
+        LEAGUE_ID,
+        player_name,
+        PLAYER_POSITION,
         HEIGHT,
         WEIGHT,
-        TO_DATE(BIRTH_DATE, 'MON DD, YYYY') AS BIRTH_DATE,
+        BIRTH_DATE,
         AGE,
         SCHOOL
-    FROM NBA_GAMES.RAW.PLAYER_INFORMATION
+    FROM {{ ref('src_player_information') }} s
 ),
 player_information_cleaned AS (
     SELECT 
