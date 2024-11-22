@@ -31,3 +31,14 @@ Below is the visualized workflow for this project
 ## Tableau Link:
 
 Access here : (here)
+
+
+## Section 2 Data Extraction
+
+I extract the data and convert to parquet using python notebook in 1. Data Ingestion to Snowflake,
+
+![nba_performance_project_structure](https://github.com/user-attachments/assets/599ede48-38bc-4e05-b367-7fbeed41b56c)
+
+here's the output of all the files...
+
+## Section 3 Snowflake storage
