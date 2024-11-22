@@ -1,107 +1,46 @@
-(Work in progress readme)
+# NBA Player Performance Pipeline
 
-# NBA Player Performance Dashboard
+## Section 1 Project Overview
 
-This project showcases my skills in data engineering, analytics, and visualization by creating a comprehensive dashboard of NBA player performance. The goal is to provide actionable insights while demonstrating my expertise in modern data tools and techniques. 
+This project is an end-to-end analytics workflow showcasing my skills in **data modeling**, **analytics**, and **visualization** using tools like **Snowflake**, **dbt**, **Python**, and **Tableau**. The goal is to create a comprehensive **NBA Player Performance Dashboard** that provides insights into player statistics and performance while demonstrating expertise in modern data tools and techniques.
 
-## Overview
+The workflow for this project is as follows:
 
-This dashboard utilizes a full data pipeline, starting from data ingestion to advanced modeling and visualization. Key highlights include:
+1. Data Extraction: using python to take data from kaggle api and nba_api
+2. Data Processing: Using pyspark to compress data
+3. Data Loading : Import parquet file to Snowflake using Python
+4. Data Transformation: using dbt to create dimension table with scd type II, fact tables, intermediate tables, Aggregated Tables
+5. Data Quality Assurance: Using dbt test like generic test, singular test and custom test to keep unique values,  remove null values etc
+6. Data Reporting : Using Tableau for the reporting
 
-- **Data Ingestion and Storage**: 
-  - Extracted NBA player data for the 2016-17 season using Python (`nba_api`).
-  - Stored data efficiently in **Parquet** format for optimized processing.
 
-- **Data Engineering and Modeling**:
-  - Processed data using **PySpark** to handle large datasets and ensure schema consistency.
-  - Loaded processed data into **Snowflake** using Python for cloud-based storage.
-  - Building data models in **dbt** by implementing:
-    - **SCD Type 2** for tracking historical changes in player attributes.
-    - **DBT Materializations** to optimize query performance.
-    - **Custom and Generic Tests** to ensure data quality and reliability.
+## Tools 
 
-- **Data Visualization**:
-  - Publish the dashboard in **Tableau**.
-  - Visualized player performance across key metrics :
-    - scoring efficiency
-    - defensive contributions
-    - playmaking trends, etc
+- Data Extraction: Python
+- Data Partition: Spark
+- Data Warehouse: Snowflake
+- Data Transformation: dbt
+- Data Testing post transformation: dbt test
+- Data Visualization: Tableau
 
-This project demonstrates my ability to manage end-to-end data workflows, from raw data extraction to delivering actionable insights. 
+Below is the visualized workflow for this project
 
----
+<img width="1062" alt="nba_performance_architecture" src="https://github.com/user-attachments/assets/8cec6884-c6e2-4196-af7d-cd98a4f29a9f">
 
-## Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Data Pipeline Workflow](#data-pipeline-workflow)
-- [File Structure](#file-structure)
-- [Setup and Installation](#setup-and-installation)
-- [Usage Instructions](#usage-instructions)
-- [Data Sources](#data-sources)
-- [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
-- [License](#license)
+## Tableau Link:
 
----
+Access here : (here)
 
-## Overview
 
-The project retrieves NBA team roster data for the 2016-17 season using the `nba_api`. The collected data includes attributes such as player names, positions, heights, weights, ages, and schools. The data is cleaned, saved in Parquet format, and uploaded to Snowflake for efficient querying and integration with Tableau dashboards.
+## Section 2 Data Extraction
 
----
+I extract the data and convert to parquet using python notebook in 1. Data Ingestion to Snowflake,
 
-## Features
+![nba_performance_project_structure](https://github.com/user-attachments/assets/599ede48-38bc-4e05-b367-7fbeed41b56c)
 
-- Fetches NBA team roster data for the 2016-17 season using the `nba_api`.
-- Stores data in **Parquet** format for efficient storage and processing.
-- Uploads processed data to **Snowflake** for integration with BI tools like Tableau.
-- Provides player-level insights, including:
-  - Player names, positions, heights, weights, birthdates, and schools.
+here's the output of all the data...
+![nba_performance_project_partition](https://github.com/user-attachments/assets/cbd5af07-7d7f-48eb-bdca-21afe644f8a6)
 
----
 
-## Technologies Used
-
-- **Python**: Data fetching, processing, and cleaning.
-  - `nba_api`
-  - `pandas`
-  - `pyarrow`
-- **Snowflake**: Cloud database for storing cleaned data.
-- **Tableau**: Visualization of player and team performance metrics.
-- **Parquet**: Data storage format for optimized querying.
-
----
-
-## Data Pipeline Workflow
-
-1. **Data Fetching**:
-   - Uses `nba_api` to fetch player and team information for the 2016-17 season.
-2. **Data Cleaning**:
-   - Cleans and organizes data into a structured format.
-   - Handles missing values with `None`.
-3. **Data Storage**:
-   - Saves data in Parquet format for efficient storage.
-4. **Data Upload**:
-   - Uploads the cleaned data to a Snowflake table for querying.
-5. **Visualization**:
-   - Creates interactive Tableau dashboards for player insights.
-
----
-
-## File Structure
-
-```plaintext
-nba_team_rosters_analysis/
-├── dataset/
-│   ├── parquet/
-│   │   ├── nba_team_rosters_2016_17.parquet
-├── scripts/
-│   ├── fetch_roster.py          # Script to fetch NBA team rosters
-│   ├── process_data.py          # Script to clean and save data
-│   ├── upload_to_snowflake.py   # Script to upload data to Snowflake
-├── tableau/
-│   ├── nba_dashboard.twbx       # Tableau workbook for visualizations
-├── README.md                    # Project documentation
+## Section 3 Snowflake storage
