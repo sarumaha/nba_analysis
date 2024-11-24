@@ -1,29 +1,52 @@
 # NBA Player Performance Pipeline
 
-## Section 1 Project Overview
+## Section 1: Project Overview
 
-This project is an end-to-end analytics workflow showcasing my skills in **data modeling**, **analytics**, and **visualization** using tools like **Snowflake**, **dbt**, **Python**, and **Tableau**. The goal is to create a comprehensive **NBA Player Performance Dashboard** that provides insights into player statistics and performance while demonstrating expertise in modern data tools and techniques.
+This project demonstrates an end-to-end analytics workflow, showcasing my skills in **data modeling**, **analytics**, and **visualization** using tools such as **Snowflake**, **dbt**, **Python**, and **Tableau**. The goal is to develop a comprehensive **NBA Player Performance Dashboard** that provides insights into player statistics and performance while highlighting expertise in modern data tools and techniques.
 
-The workflow for this project is as follows:
+The workflow for this project includes the following steps:
 
-1. Data Extraction: using python to take data from kaggle api and nba_api
-2. Data Processing: Using pyspark to compress data
-3. Data Loading : Import parquet file to Snowflake using Python
-4. Data Transformation: using dbt to create dimension table with scd type II, fact tables, intermediate tables, Aggregated Tables
-5. Data Quality Assurance: Using dbt test like generic test, singular test and custom test to keep unique values,  remove null values etc
-6. Data Reporting : Using Tableau for the reporting
+1. **Data Extraction**:  
+   - Used Python to extract data from the Kaggle API and `nba_api`.
+
+2. **Data Processing**:  
+   - Used PySpark to clean and compress data for efficient storage and processing.
+
+3. **Data Loading**:  
+   - Import Parquet files into Snowflake using Python for cloud-based storage.
+
+4. **Data Testing**:  
+   - Performed data testing with dbt to validate the data before transformations.
+
+5. **Data Transformation**:  
+   - Used dbt to create:
+     - Dimension tables with SCD Type II for historical tracking.
+     - Fact tables for performance metrics.
+     - Intermediate and aggregated tables for reporting.
+
+6. **Data Quality Assurance**:  
+   - Applied dbt tests, including:
+     - **Generic Tests**: Enforced constraints like uniqueness and non-nullability.
+     - **Singular and Custom Tests**: Ensured data accuracy and eliminated anomalies.
+
+7. **Data Reporting**:  
+   - Visualize dashboards in Tableau to present insights.
 
 
-## Tools 
 
-- Data Extraction: Python
-- Data Partition: Spark
-- Data Warehouse: Snowflake
-- Data Transformation: dbt
-- Data Testing post transformation: dbt test
-- Data Visualization: Tableau
+## Tools
 
-Below is the visualized workflow for this project
+This project uses the following tools at various stages of the workflow:
+
+- **Data Extraction**: Python for retrieving data from APIs and external sources.
+- **Data Partitioning**: Spark for partitioning and optimizing data for efficient processing.
+- **Data Warehouse**: Snowflake as a scalable, cloud-based data storage and querying solution.
+- **Data Transformation**: dbt for creating and managing data models, including dimension and fact tables.
+- **Data Testing **: dbt tests to validate data quality.
+- **Data Visualization**: Tableau for designing interactive dashboards to present actionable insights.
+
+Below is the visual representation of the workflow for this project.
+
 
 <img width="1062" alt="nba_performance_architecture" src="https://github.com/user-attachments/assets/8cec6884-c6e2-4196-af7d-cd98a4f29a9f">
 
