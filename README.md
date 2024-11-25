@@ -70,7 +70,7 @@ here's the output of all the data...
 
 The data is organized into three layers: Raw Layer, Staging Layer, and Core Layer, each serving a purpose in processing and transforming data.
 
-[image included here]
+<img width="958" alt="nba_performance_project_data-flow" src="https://github.com/user-attachments/assets/5062d61b-6904-47ef-8efd-b4ac2e0daa75">
 
 ## Raw Layer
 **Purpose**: This layer contains the unprocessed, raw data from kaggle API and NBA API.
