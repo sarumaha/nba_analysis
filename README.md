@@ -68,6 +68,45 @@ here's the output of all the data...
 
 ## Section 4 DBT Transformation
 
+The data is organized into three layers: Raw Layer, Staging Layer, and Core Layer, each serving a purpose in processing and transforming data.
+
+[image included here]
+
+## Raw Layer
+**Purpose**: This layer contains the unprocessed, raw data from kaggle API and NBA API.
+**Tables**:
+- `raw_games`
+- `raw_games_details`
+- `raw_players`
+- `raw_player_information`
+- `raw_ranking`
+- `raw_teams`
+
+## Staging Layer
+**Purpose**: The staging layer serves as an intermediary step where raw data is cleaned and prepared for further transformation.
+**Transformations**:
+- `src_games`: Loads data from `raw_games`, removes duplicates, and standardizes date formats.
+- `src_games_details`: Imports and cleanses data from `raw_games_details`.
+- `src_players`: Processes player data from `raw_players`.
+- `stg_player_information`: Compiles detailed player information from `raw_player_information` for additional attributes.
+- `src_ranking`: Gets ranking data from `raw_ranking`, aligning player IDs and rankings.
+- `src_teams`: Gets team information from `raw_teams`
+
+## Core Layer
+**Purpose**: The core layer is designed for optimized query performance and supports complex analytical queries by providing cleansed, consolidated, and dimensionally modeled data.
+**Models**:
+- `dim_players_cleansed`: Consolidates player data from `src_players` to remove redundancies and ensure uniform formats.
+- `dim_teams_cleansed`: Cleanses and deduplicates team data from `src_teams`.
+- `dim_seasons`: Constructs a dimension table for game seasons from `src_games`, enabling analysis by season.
+- `int_player_stats`: Integrates player statistics from multiple staging tables to provide a comprehensive view of player performance.
+- `int_season_stats`: Aggregates season statistics to offer insights at the season level.
+- `fct_player_performance`: A fact table that compiles player performance metrics, enabling detailed analysis and reporting.
+- `scd_raw_teams`: Transformed from `raw_teams` using DBT and apply SCD type II logic to capture historical changes in team data.
+- `scd_raw_players`: Transformed from `raw_players` using DBT and apply SCD type II logic to capture historical changes in player data.
+
+
+
+
 
 ## Section 5 DBT Test Post-Transformation
 
