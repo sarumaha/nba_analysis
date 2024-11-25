@@ -11,3 +11,4 @@ pyarrow
 fastparquet
 dbt-snowflake
 nba-api
+great_expectations

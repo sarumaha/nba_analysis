@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: dim_players_cleansed
+    description: "This dimension table holds cleansed data about players."
+    columns:
+      - name: player_name
+        description: "The name of the player."
+        data_tests:
+          - not_null
+      - name: team_id
+        description: "The unique identifier of the team to which the player belongs."
+        data_tests:
+          - not_null
+      - name: player_id
+        description: "The unique identifier of the player."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_players_cleansed')
+              field: player_id
+              
+      - name: season
+        description: "The sporting season during which the statistics were recorded."
+        data_tests:
+          - not_null
+
+  - name: dim_seasons
+    description: "This dimension table holds data about different sports seasons."
+    columns:
+      - name: season_id
+        description: "The unique identifier of the sports season."
+        data_tests:
+          - not_null
+          - unique
+      - name: season_name
+        description: "The name of the sports season."
+        data_tests:
+          - not_null
+          - unique
+      - name: start_date
+        description: "The start date of the sports season."
+        data_tests:
+          - not_null
+      - name: end_date
+        description: "The end date of the sports season."
+        data_tests:
+          - not_null
+
+  - name: src_games
+    description: "Source table containing raw games data."
+    columns:
+      - name: home_team_wins
+        description: "Indicator of whether the home team won the game (1 for win, 0 for loss)."
+        data_tests:
+          - accepted_values:
+              values: ['0', '1']
