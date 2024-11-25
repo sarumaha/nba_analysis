@@ -15,21 +15,18 @@ The workflow for this project includes the following steps:
 3. **Data Loading**:  
    - Import Parquet files into Snowflake using Python for cloud-based storage.
 
-4. **Data Testing**:  
-   - Performed data testing with dbt to validate the data before transformations.
-
-5. **Data Transformation**:  
+4. **Data Transformation**:  
    - Used dbt to create:
      - Dimension tables with SCD Type II for historical tracking.
      - Fact tables for performance metrics.
      - Intermediate and aggregated tables for reporting.
 
-6. **Data Quality Assurance**:  
+5. **Data Quality Assurance**:  
    - Applied dbt tests, including:
      - **Generic Tests**: Enforced constraints like uniqueness and non-nullability.
      - **Singular and Custom Tests**: Ensured data accuracy and eliminated anomalies.
 
-7. **Data Reporting**:  
+6. **Data Reporting**:  
    - Visualize dashboards in Tableau to present insights.
 
 
@@ -53,7 +50,7 @@ Below is the visual representation of the workflow for this project.
 
 ## Tableau Link:
 
-Access here : (here)
+Access here : [(Tableau Page)](https://public.tableau.com/app/profile/yogi.sharo.sarumaha/viz/NBAPerformanceAnalysis/NBAPerformanceDashboard)
 
 
 ## Section 2 Data Extraction
@@ -68,14 +65,12 @@ here's the output of all the data...
 
 ## Section 3 Snowflake storage
 
-## Section 4 DBT Test Pre-Transformation
+
+## Section 4 DBT Transformation
 
 
-## Section 5 DBT Transformation
+## Section 5 DBT Test Post-Transformation
 
-
-## Section 6 DBT Post-Transformation
-
-## Section 7 Visualization/Reporting
+## Section 6 Visualization/Reporting
 
 
