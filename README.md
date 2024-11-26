@@ -169,7 +169,7 @@ This section is important to ensure the accuracy and reliability of our data pip
 Here are some questions to be answered in this dashboard: 
 
 1. **How does a player's performance evolve over the seasons?**  
-   - "Point Per Game by Season" and "Shot Accuracy by Season" charts allow users to track a player's scoring trends and efficiency over time. Users can filter by **Season Year** to focus on specific season they want to look at.
+   - "Point Per Game by Season" and "Shot Accuracy by Season" charts allow users to track a player's scoring trends and efficiency over time. Users can filter by **Season Year** or type in **Player Name**.
 
 2. **How is the relationship between scoring and assisting for players?**  
    - The "Scoring vs Assist" scatterplot visualizes how players balance scoring and assisting responsibilities, to look at their playmaking style. For example, we can check if high scorers would also contribute significantly with assists.
