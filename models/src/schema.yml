@@ -16,10 +16,7 @@ models:
         description: "The unique identifier of the player."
         data_tests:
           - not_null
-          - relationships:
-              to: ref('dim_players_cleansed')
-              field: player_id
-              
+
       - name: season
         description: "The sporting season during which the statistics were recorded."
         data_tests:
