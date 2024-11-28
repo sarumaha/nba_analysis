@@ -121,7 +121,8 @@ Here is the output of the dbt run:
 
 Below is the lineage graph from dbt:
 
-<img width="1254" alt="nba_performance_lineage_graph" src="https://github.com/user-attachments/assets/43f47147-16e2-499f-a386-7ba6d8c6ec46">
+<img width="899" alt="nba_performance_full_lineage_graph" src="https://github.com/user-attachments/assets/bd0356ac-5bfd-490c-af84-d56b3d7c5fc6">
+
 
 Note that not all of the tables in the dbt model are used for reporting; some data models are included to showcase various data modeling techniques
 
