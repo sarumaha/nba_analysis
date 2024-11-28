@@ -115,6 +115,10 @@ The data is structured into three layers: **Raw Layer**, **Staging Layer**, and 
 - `scd_raw_teams`: Applies SCD Type II to track historical changes in team data.
 - `scd_raw_players`: Applies SCD Type II to track historical changes in player data.
 
+Here is the output of the dbt run:
+<img width="847" alt="nba_performance_dbt_run" src="https://github.com/user-attachments/assets/4933e7db-13cb-4a72-9be0-ec7d0db3b7b9">
+
+
 Below is the lineage graph from dbt:
 
 <img width="1254" alt="nba_performance_lineage_graph" src="https://github.com/user-attachments/assets/43f47147-16e2-499f-a386-7ba6d8c6ec46">
