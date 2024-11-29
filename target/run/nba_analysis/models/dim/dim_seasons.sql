@@ -2,7 +2,9 @@
   create or replace   view NBA_GAMES.DEV.dim_seasons
   
    as (
-    WITH seasons AS (
+    
+
+WITH seasons AS (
     SELECT * FROM NBA_GAMES.DEV.src_games
 )
 SELECT DISTINCT

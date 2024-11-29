@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized = 'view',
+  )
+}}
+
 WITH seasons AS (
     SELECT * FROM {{ref('src_games')}}
 )

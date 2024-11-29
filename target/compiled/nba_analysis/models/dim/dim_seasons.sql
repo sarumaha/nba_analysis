@@ -1,3 +1,5 @@
+
+
 WITH seasons AS (
     SELECT * FROM NBA_GAMES.DEV.src_games
 )

@@ -2,7 +2,9 @@
   create or replace   view NBA_GAMES.DEV.stg_player_information
   
    as (
-    WITH player_information AS (
+    
+
+WITH player_information AS (
     SELECT 
         TEAM_ID,
         SEASON,

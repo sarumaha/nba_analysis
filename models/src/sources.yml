@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: NBA_GAMES
+    schema: RAW
+    tables:
+      - name: GAMES_DETAILS
+        identifier: raw_games_details
+      - name: GAMES
+        identifier: raw_games
+      - name: PLAYER_INFORMATION
+        identifier: raw_player_information
+      - name: PLAYERS
+        identifier: raw_players
+      - name: RANKING
+        identifier: raw_ranking
+      - name: TEAMS
+        identifier: raw_teams

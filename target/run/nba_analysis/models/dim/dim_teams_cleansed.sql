@@ -2,7 +2,9 @@
   create or replace   view NBA_GAMES.DEV.dim_teams_cleansed
   
    as (
-    WITH teams AS (
+    
+
+WITH teams AS (
     SELECT * FROM NBA_GAMES.DEV.src_teams
 )
 SELECT

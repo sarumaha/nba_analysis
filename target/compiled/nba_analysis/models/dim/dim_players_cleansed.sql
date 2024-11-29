@@ -1,3 +1,4 @@
+
 with players as (
 SELECT * FROM NBA_GAMES.DEV.src_players
 )

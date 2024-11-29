@@ -67,7 +67,7 @@ games_details_data AS (
 SELECT 
     pgd.PLAYER_ID AS player_id,
     pgd.PLAYER_NAME AS player_name,
-    pgd.GAMES_GAME_ID AS details_game_id,
+    gdd.DETAILS_GAME_ID AS DETAILS_GAME_ID,
     pgd.GAME_DATE_EST AS game_date_est,
     pgd.SEASON AS season,
     pgd.HOME_TEAM_WINS AS home_team_wins,
@@ -94,12 +94,16 @@ JOIN games_details_data gdd
     ON pgd.GAMES_GAME_ID = gdd.DETAILS_GAME_ID 
     AND pgd.PLAYER_ID = gdd.PLAYER_ID
     AND pgd.PLAYER_TEAM_ID = gdd.DETAILS_TEAM_ID
+
+
+  WHERE pgd.GAME_DATE_EST > (SELECT MAX(GAME_DATE_EST) FROM NBA_GAMES.DEV.int_player_stats)
+
+
 GROUP BY 
     pgd.PLAYER_ID,
     pgd.PLAYER_NAME,
-    pgd.GAMES_GAME_ID,
+    gdd.DETAILS_GAME_ID,
     pgd.GAME_DATE_EST,
     pgd.SEASON,
     pgd.HOME_TEAM_WINS,
     pgd.GAME_STATUS_TEXT
-

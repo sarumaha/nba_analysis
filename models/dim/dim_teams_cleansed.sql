@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized = 'view',
+  )
+}}
+
 WITH teams AS (
     SELECT * FROM {{ ref('src_teams') }}
 )

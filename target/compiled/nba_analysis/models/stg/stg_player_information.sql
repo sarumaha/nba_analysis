@@ -1,3 +1,5 @@
+
+
 WITH player_information AS (
     SELECT 
         TEAM_ID,

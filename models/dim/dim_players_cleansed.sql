@@ -1,3 +1,8 @@
+{{
+  config(
+    materialized = 'view',
+  )
+}}
 with players as (
 SELECT * FROM {{ref('src_players')}}
 )

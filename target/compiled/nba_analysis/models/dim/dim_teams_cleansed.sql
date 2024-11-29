@@ -1,3 +1,5 @@
+
+
 WITH teams AS (
     SELECT * FROM NBA_GAMES.DEV.src_teams
 )
