@@ -2,5 +2,8 @@
 .env
 *.json
 
+
 # Ignore Python virtual environments
 venv/
+logs/
+.ipynb_checkpoints/
