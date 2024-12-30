@@ -36,11 +36,11 @@ The workflow for this project includes the following steps:
 This project uses the following tools at various stages of the workflow:
 
 - **Data Extraction**: Python for retrieving data from APIs and external sources.
-- **Data Partitioning**: Spark for partitioning and optimizing data for efficient processing.
-- **Data Warehouse**: Snowflake as a scalable, cloud-based data storage and querying solution.
+- **Data Partitioning**: Spark for partitioning and optimizing data.
+- **Data Warehouse**: Snowflake as a scalable, cloud-based data storage.
 - **Data Transformation**: dbt for creating and managing data models, including dimension and fact tables.
 - **Data Testing**: dbt tests to validate data quality.
-- **Data Visualization**: Tableau for designing interactive dashboards to present actionable insights.
+- **Data Visualization**: Tableau for designing interactive dashboards for the NBA insights.
 
 Below is the visual representation of the workflow for this project.
 
@@ -124,7 +124,7 @@ Below is the lineage graph from dbt:
 <img width="899" alt="nba_performance_full_lineage_graph" src="https://github.com/user-attachments/assets/bd0356ac-5bfd-490c-af84-d56b3d7c5fc6">
 
 
-Note that not all of the tables in the dbt model are used for reporting; some data models are included to showcase various data modeling techniques
+Note that not all of the tables in the dbt model are used for reporting; some data models are included to present data modeling techniques
 
 ## Section 5: DBT Test Post-Transformation
 
@@ -192,6 +192,6 @@ Here is the snapshot of the dashboard :
 
 
 
-Access the link here : [(Tableau Page)](https://public.tableau.com/app/profile/yogi.sharo.sarumaha/viz/NBAPerformanceAnalysis/NBAPerformanceDashboard)
+Access the tableau dashboard here : [(Tableau Page)](https://public.tableau.com/app/profile/yogi.sharo.sarumaha/viz/NBAPerformanceAnalysis/NBAPerformanceDashboard)
 
 
