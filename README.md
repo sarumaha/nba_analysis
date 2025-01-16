@@ -1,5 +1,15 @@
 # NBA Player Performance Pipeline
 
+## Table of Contents
+
+1. [Project Overview](#section-1-project-overview)
+2. [Data Extraction](#section-2-data-extraction)
+3. [Snowflake Storage](#section-3-snowflake-storage)
+4. [DBT Transformation](#section-4-dbt-transformation)
+5. [DBT Test Post-Transformation](#section-5-dbt-test-post-transformation)
+6. [Visualization/Reporting](#section-6-visualizationreporting)
+
+
 ## Section 1: Project Overview
 
 This project demonstrates an end-to-end analytics workflow, showcasing my skills in **data modeling**, **analytics**, and **visualization** using tools such as **Snowflake**, **dbt**, **Python**, and **Tableau**. The goal is to develop a comprehensive **NBA Player Performance Dashboard** that provides insights into player statistics and performance.
